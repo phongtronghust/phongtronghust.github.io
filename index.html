@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+    <title>Phòng trống HUST</title>
+</head>
+<body>
+    <h1>Phòng trống HUST</h1>
+
+    <p id="current_time">Thời điểm: 7h00, thứ 2, tuần 3</p>
+    <label for="search_bar"></label>
+    <input type="text" onkeyup="filter()" id="search_bar" placeholder="Tìm phòng, lớp hoặc môn"/>
+
+    <ul id="list"></ul>
+
+    <script src="data.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
