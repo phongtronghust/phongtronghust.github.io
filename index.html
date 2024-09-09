@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.75">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=0.75">
     <title>Phòng trống HUST</title>
 </head>
 <body>
@@ -16,9 +17,11 @@
         <span class="tag" style="height: fit-content; border: 1px solid black; font-size: small;">Kỳ 2024.1</span>
     </div>
 
-    <p id="current_time"></p>
-    <label for="search_bar"></label>
-    <input type="text" onkeyup="filter()" id="search_bar" placeholder="Tìm phòng, lớp hoặc môn"/>
+    <div style="position: sticky; top: 0; background: white; padding: 16px 0 8px 0;">
+        <p id="current_time" style="margin-top: 0;"></p>
+        <label for="search_bar"></label>
+        <input type="text" onkeyup="filter()" id="search_bar" placeholder="Tìm phòng, lớp hoặc môn"/>
+    </div>
 
     <ul id="list"></ul>
 
