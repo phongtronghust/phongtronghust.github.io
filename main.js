@@ -29,6 +29,10 @@ function getCurrentDayTimeWeek() {
         Math.floor((date.valueOf() - monday_first_week_ms)/604800000) + 1];
 }
 
+function getTimeString(hour, minute) {
+    return (hour < 10 ? '0' : '') + hour + 'h' + (minute < 10 ? '0' : '') + minute;
+}
+
 // Hàm trả về thông tin các lớp hiện tại và lớp tiếp theo của một phòng tại một tuần, thứ và giờ cụ thể
 // Nếu không có lớp hiện tại/tiếp theo thì giá trị tại đó là null
 function get_information_of_room(room_id, day_of_week, time, week) {
@@ -74,7 +78,7 @@ const current_time_element = document.getElementById("current_time");
 const list = document.getElementById("list");
 
 const current_time_information = getCurrentDayTimeWeek();
-current_time_element.innerHTML = `Thời gian: ${current_time_information[1]}:${current_time_information[2]}, thứ ${current_time_information[0] + 2}, tuần ${current_time_information[3]}`;
+current_time_element.innerHTML = `Thời gian: ${getTimeString(current_time_information[1], current_time_information[2])}, thứ ${current_time_information[0] + 2}, tuần ${current_time_information[3]}`;
 
 for (let i = 0; i < rooms.length; ++i) {
     let time = current_time_information[1]*12 + current_time_information[2]/5;
