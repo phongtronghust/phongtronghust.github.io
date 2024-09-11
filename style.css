@@ -24,16 +24,22 @@ li {
     padding: 16px;
 }
 
-::placeholder {color: black}
+::placeholder {color: black; opacity: 1;}
 
 input {
+    ::placeholder {color: black;}
     border: 1px solid black;
     border-radius: 6px;
+    font-family: inherit;
     font-size: small;
-    padding: 8px 8px 8px 32px;
+    padding: 6px;
+    background: inherit;
+}
 
+input[type="text"] {
     width: 100%;
     box-sizing: border-box;
+    padding: 8px 8px 8px 32px;
 
     background: url("search.svg") no-repeat 8px center;
     background-size: 20px;
@@ -44,4 +50,15 @@ input {
     border-radius: 6px;
     font-size: small;
     margin-left: 8px;
+}
+
+#reload_button {
+    border: 1px solid black;
+    background: inherit;
+    margin-left: 0;
+    display: none;
+}
+
+#reload_button:active {
+    background-color: lightgray;
 }
