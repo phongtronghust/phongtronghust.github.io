@@ -125,7 +125,10 @@ function switch_to_manual_mode() {
 function switch_to_auto_mode() {
     reload_button.style.display = 'none';
     show_real_time();
-    timer_id = setInterval(show_real_time, 1000);
+    timer_id = setInterval(() => {
+        show_real_time();
+        if (new Date().getSeconds() === 0) calculate_list();
+    }, 1000);
     calculate_list();
 }
 
@@ -142,4 +145,7 @@ let current_date = new Date();
 calculate_list();
 show_real_time();
 
-let timer_id = setInterval(show_real_time, 1000);
+let timer_id = setInterval(() => {
+    show_real_time();
+    if (new Date().getSeconds() === 0) calculate_list();
+}, 1000);
