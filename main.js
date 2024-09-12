@@ -127,7 +127,10 @@ function switch_to_auto_mode() {
     show_real_time();
     timer_id = setInterval(() => {
         show_real_time();
-        if (new Date().getSeconds() === 0) calculate_list();
+        current_date = new Date();
+        if (current_date.getSeconds() === 0) {
+            calculate_list();
+        }
     }, 1000);
     calculate_list();
 }
@@ -147,5 +150,8 @@ show_real_time();
 
 let timer_id = setInterval(() => {
     show_real_time();
-    if (new Date().getSeconds() === 0) calculate_list();
+    current_date = new Date();
+    if (new Date().getSeconds() === 0) {
+        calculate_list();
+    }
 }, 1000);
