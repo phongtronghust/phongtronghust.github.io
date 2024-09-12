@@ -148,10 +148,7 @@ let current_date = new Date();
 calculate_list();
 show_real_time();
 
-window.onfocus = () => {
-    console.log("focused");
-    calculate_list();
-};
+window.onfocus = calculate_list;
 
 let timer_id = setInterval(() => {
     show_real_time();
