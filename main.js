@@ -114,6 +114,10 @@ function calculate_list() {
 
         list.appendChild(child);
     }
+
+    if (document.getElementById("search_bar").value !== "") {
+        filter();
+    }
 }
 
 function switch_to_manual_mode() {
