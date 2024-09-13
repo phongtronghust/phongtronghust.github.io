@@ -129,6 +129,9 @@ function switch_to_manual_mode() {
 function switch_to_auto_mode() {
     reload_button.style.display = 'none';
     show_real_time();
+
+    current_date = new Date();
+    calculate_list();
     timer_id = setInterval(() => {
         show_real_time();
         current_date = new Date();
@@ -136,7 +139,6 @@ function switch_to_auto_mode() {
             calculate_list();
         }
     }, 1000);
-    calculate_list();
 }
 
 const FIRST_WEEK_START_MS = new Date("2024-09-02T00:00:00").valueOf();
