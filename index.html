@@ -14,7 +14,7 @@
 <body>
     <div style="display: flex; align-items: center;">
         <h1 style="flex: 1;">Phòng trống HUST</h1>
-        <span class="tag" style="height: fit-content; border: 1px solid black; font-size: small;">Kỳ 2024.1</span>
+        <span id="current_week" style="height: fit-content; font-size: small;"></span>
     </div>
 
     <div style="display: flex; flex-direction: column; position: sticky; top: 0; background: white; padding: 8px 4px 8px 4px; margin: 0 -4px 0 -4px;">
@@ -25,7 +25,7 @@
         </span>
 
         <label for="search_bar"></label>
-        <input type="text" onkeyup="filter()" id="search_bar" placeholder="Tìm phòng, lớp hoặc môn"/>
+        <input type="text" onkeyup="search()" id="search_bar" placeholder="Tìm phòng, lớp hoặc môn"/>
     </div>
 
     <ul id="list"></ul>

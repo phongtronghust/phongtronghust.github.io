@@ -54,7 +54,7 @@ function get_information_of_room(room_id, day_of_week, time, week) {
     return [current, next];
 }
 
-function filter() {
+function search() {
     const text = document.getElementById("search_bar").value.toUpperCase();
     const list_items = list.getElementsByTagName("li");
 
@@ -114,16 +114,23 @@ function calculate_list() {
 
         list.appendChild(child);
     }
+}
+
+function update_page_information() {
+    const week_number = Math.floor((current_date.valueOf() - FIRST_WEEK_START_MS)/WEEK_MS) + 1;
+    current_week.innerHTML = "Tuần " + week_number + ", kỳ 2024.1";
+
+    calculate_list();
 
     if (document.getElementById("search_bar").value !== "") {
-        filter();
+        search();
     }
 }
 
 function switch_to_manual_mode() {
     clearInterval(timer_id);
     current_date = new Date(date_input.value + "T" + time_input.value);
-    calculate_list();
+    update_page_information();
 }
 
 function switch_to_auto_mode() {
@@ -131,12 +138,13 @@ function switch_to_auto_mode() {
     show_real_time();
 
     current_date = new Date();
-    calculate_list();
+    update_page_information()
+
     timer_id = setInterval(() => {
         show_real_time();
         current_date = new Date();
         if (current_date.getSeconds() === 0) {
-            calculate_list();
+            update_page_information();
         }
     }, 1000);
 }
@@ -147,12 +155,15 @@ const WEEK_MS = 604800000;
 const date_input = document.getElementById("date_input");
 const time_input = document.getElementById("time_input");
 const list = document.getElementById("list");
+const current_week = document.getElementById("current_week");
 const reload_button = document.getElementById("reload_button");
 
 let current_date = new Date();
 
 calculate_list();
 show_real_time();
+const week_number = Math.floor((current_date.valueOf() - FIRST_WEEK_START_MS)/WEEK_MS) + 1;
+current_week.innerHTML = "Tuần " + week_number + ", kỳ 2024.1";
 
 window.onfocus = calculate_list;
 
